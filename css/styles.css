@@ -1,0 +1,7 @@
+#paneInputsWrapper {
+    max-height: 200px;   /* adjust as you like */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
