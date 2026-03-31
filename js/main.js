@@ -187,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const spacingX = parseFloat(document.getElementById("patternXSpacing").value);
         const userOffset = parseFloat(document.getElementById("patternOffset").value);
 
+
         // Compute pane edges
         const paneEdges = [];
         let x = 0;
