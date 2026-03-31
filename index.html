@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaneGrid</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="container-fluid p-4">
+    <h1 class="mb-4">PaneGrid</h1>
+
+    <div class="row">
+        <!-- Controls Panel -->
+        <div class="col-md-3">
+            <div class="card p-3 shadow-sm">
+                <h4>Settings</h4>
+
+                <!-- Wall Height -->
+                <div class="mb-3">
+                    <label for="wallHeight" class="form-label">Wall Height</label>
+                    <input type="number" id="wallHeight" class="form-control" value="400">
+                </div>
+
+                <!-- Number of Panes -->
+                <div class="mb-3">
+                    <label class="form-label">Number of Panes</label>
+                    <input type="number" id="paneCount" class="form-control" value="4">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Pane Widths</label>
+
+                    <div id="paneInputsWrapper">
+                        <div id="paneInputs"></div>
+                    </div>
+                </div>
+
+                <!-- Pattern Size -->
+                <div class="mb-3">
+                    <label for="patternSize" class="form-label">Pattern Size (cm)</label>
+                    <input type="number" id="patternSize" class="form-control" value="1" min="0.1">
+                </div>
+
+                <!-- Pattern Spacing -->
+                <div class="mb-3">
+                    <label for="patternXSpacing" class="form-label">Pattern Horizontal Spacing (cm)</label>
+                    <input type="number" id="patternXSpacing" class="form-control" value="5">
+                </div>
+
+                <div class="mb-3">
+                    <label for="patternYSpacing" class="form-label">Pattern Vertical Spacing (cm)</label>
+                    <input type="number" id="patternYSpacing" class="form-control" value="5">
+                </div>
+
+                <!-- Pattern Offset -->
+                <div class="mb-3">
+                    <label for="FloorOffset" class="form-label">Floor Offset (cm)</label>
+                    <input type="number" id="FloorOffset" class="form-control" value="0" min="0">
+                </div>
+
+                <div class="mb-3">
+                    <label for="patternOffset" class="form-label">Pattern Offset (cm)</label>
+                    <input type="number" id="patternOffset" class="form-control" value="0">
+                </div>
+
+                <!-- Draw Button -->
+                <button id="drawBtn" class="btn btn-primary w-100">
+                    Draw
+                </button>
+
+                <button id="downloadBtn" class="btn btn-secondary mt-2">Download Circle Positions</button>
+            </div>
+        </div>
+
+        <!-- Canvas Preview -->
+        <div class="col-md-9">
+            <div class="card p-3 shadow-sm">
+                <h4>Preview</h4>
+                <canvas id="previewCanvas" width="900" height="500" class="border w-100"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!-- Your JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
