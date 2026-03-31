@@ -102,12 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const wallHeightPx = wall.height * scale;
 
         const circleDiameter = parseFloat(document.getElementById("patternSize").value);
-        const spacing = parseFloat(document.getElementById("patternSpacing").value);
+        const spacingX = parseFloat(document.getElementById("patternXSpacing").value);
+        const spacingY = parseFloat(document.getElementById("patternYSpacing").value);
         const userOffset = parseFloat(document.getElementById("patternOffset").value); // can be negative
         const floorOffset = parseFloat(document.getElementById("FloorOffset").value);
 
         const circleDiameterPx = circleDiameter * scale;
-        const spacingPx = spacing * scale;
+        const spacingPx = spacingX * scale;
         const floorOffsetPx = floorOffset * scale;
 
         // Offset for first circle
@@ -155,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Draw circle (automatically clipped at wall edges)
             ctx.beginPath();
             ctx.arc(cx, cy, circleDiameterPx / 2, 0, Math.PI * 2);
+            ctx.arc(cx, cy - spacingY, circleDiameterPx / 2, 0, Math.PI * 2);
             ctx.fill();
 
             i++;
@@ -182,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function downloadPositionsSorted(wall, panes) {
         const circleDiameter = parseFloat(document.getElementById("patternSize").value);
-        const spacing = parseFloat(document.getElementById("patternSpacing").value);
+        const spacingX = parseFloat(document.getElementById("patternXSpacing").value);
         const userOffset = parseFloat(document.getElementById("patternOffset").value);
 
         // Compute pane edges
@@ -198,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const circles = [];
         let i = 0;
         while (true) {
-            const cx = userOffset + i * (circleDiameter + spacing); // X in cm
+            const cx = userOffset + i * (circleDiameter + spacingX); // X in cm
             const left = cx - circleDiameter / 2;
             const right = cx + circleDiameter / 2;
 
